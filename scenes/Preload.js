@@ -2,16 +2,12 @@ class Preload extends Phaser.Scene{
     constructor(){
         super('Preload')
     }
-    init() {
-
-    }
     preload() {
-
+        const dir = 'assets/';
+        game.load.image('ship', dir + 'playerShip1_red.png');
+        game.load.image('laser', dir + 'laserBlue02.png');
     }
-    create(data) {
-        console.log(data.data);
-    }
-    update() {
-
+    create() {
+        this.scene.start('Main');
     }
 }

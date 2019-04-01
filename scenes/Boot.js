@@ -2,21 +2,12 @@ class Boot extends Phaser.Scene {
     constructor(){
         super("Boot")
     }
-    init(){
-
-    }
-    preload(){
-    }
     create(){
         this.time.addEvent({
             delay: 1000,
             callback: this.makeText.bind(this)
         });
     }
-    update(){
-
-    }
-    
     makeText() {
         this.textValue = 'Welcome'
         this.welcomeTextValue = 'Play'
@@ -59,6 +50,6 @@ class Boot extends Phaser.Scene {
         
     }
      play() {
-        this.scene.start('Preload',{data:'hello'})
+        this.scene.start('Preload')
     }
 }
