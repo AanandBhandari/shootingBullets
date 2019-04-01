@@ -1,6 +1,6 @@
 // global variable
-const gameOption = {
-
+const gameOptions = {
+    asset_path: '/assets/'
 }
 
 
