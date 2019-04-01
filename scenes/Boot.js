@@ -52,6 +52,13 @@ class Boot extends Phaser.Scene {
             }
         });
         this.playButton.font = "Montserrat";
+        this.playButton.setInteractive();
+         this.playButton.on('pointerdown', function(){
+            this.play();
+        }, this);
+        
     }
-
+     play() {
+        this.scene.start('Preload',{data:'hello'})
+    }
 }
