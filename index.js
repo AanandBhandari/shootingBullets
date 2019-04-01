@@ -1,6 +1,6 @@
 // global variable
 const gameOption = {
-    
+
 }
 
 
@@ -8,8 +8,7 @@ window.onload = function () {
     let gameConfig = {
         width: 480,
         height: 640,
-        scene: [Boot, Preload, PlayGame, Over],
-        parent: 'app',
+        scene: [Boot],
         backgroundColor: 0x222222,
         physics: {
             default: 'arcade',
@@ -19,4 +18,5 @@ window.onload = function () {
         }
     }
     game = new Phaser.Game(gameConfig);
+    window.focus()
 }
