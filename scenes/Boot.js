@@ -19,6 +19,7 @@ class Boot extends Phaser.Scene {
     
     makeText() {
         this.textValue = 'Welcome'
+        this.welcomeTextValue = 'Play'
         this.welcomeText = this.make.text({
             x: this.cameras.main.width / 2,
             y: this.cameras.main.height / 2 - 50,
@@ -31,5 +32,26 @@ class Boot extends Phaser.Scene {
             }
         });
         this.welcomeText.font = "Montserrat";
+
+        this.playButton = this.make.text({
+            x: this.cameras.main.width / 2,
+            y: this.cameras.main.height / 2 + 50,
+            text: this.welcomeTextValue,
+            origin: 0.5,
+            padding: {
+                left: 20,
+                right: 20,
+                top: 5,
+                bottom: 5
+            },
+            style: {
+                fontSize: '40px',
+                color: '#000000',
+                backgroundColor: '#FFFFFF',
+                radius: 2
+            }
+        });
+        this.playButton.font = "Montserrat";
     }
+
 }
