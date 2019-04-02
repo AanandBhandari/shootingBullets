@@ -8,7 +8,7 @@ window.onload = function () {
     let gameConfig = {
         width: 480,
         height: 640,
-        scene: [Boot,Preload],
+        scene: [Boot,Preload,Main],
         backgroundColor: 0x222222,
         physics: {
             default: 'arcade',
