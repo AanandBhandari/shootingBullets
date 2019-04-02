@@ -26,8 +26,38 @@ class Main extends Phaser.Scene {
                 radius: 2
             }
         });
+
+        this.lasers = this.physics.add.group();
+       
+        this.lasers.createMultiple({
+            key : 'laser',
+            maxSize : -1,
+            setXY: {
+                x: this.ship.x,
+                y: this.ship.y,
+            }
+        })
+        this.lasers.children.iterate(function (child) {
+            child.setCollideWorldBounds(true);
+            child.body.onWorldBounds = true;
+            this.physics.world.on('worldbounds', function (body) {
+                console.log('hello from the edge of the world', body);
+            }, this);
+        },this)
+        this.input.on('pointerdown', this.shoot, this);
     }
-    
+    update() {
+        
+    }
+    shoot() {
+        this.lasers.children.iterate(function (child){
+            console.log('helloworld');
+            // child.setActive(true);
+            // child.setVisible(true);
+            child.body.velocity.y = -200;
+        },this)
+        
+    }
     
 
 }
